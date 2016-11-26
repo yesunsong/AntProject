@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project default="init" name="Sort">  
+
+	<target name="init">   
+        <echo message="  Available Targets:"/>    
+        <echo message="-------------------------------------------------------"/>    
+        <echo message="  init ${init}   ..."/>    
+        <echo message="-------------------------------------------------------"/>   
+    </target>  
+	
+</project>
