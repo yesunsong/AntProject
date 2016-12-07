@@ -1,12 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<project default="check_sys">  
+  
+    <condition property="isMac">
+		<os family="mac" />
+	</condition>
 
-<project default="init" name="Sort">  
-
-	<target name="init">   
-        <echo message="  Available Targets:"/>    
-        <echo message="-------------------------------------------------------"/>    
-        <echo message="  init ${init}   ..."/>    
-        <echo message="-------------------------------------------------------"/>   
-    </target>  
+	<condition property="isWindows">
+		<os family="windows" />
+	</condition>
 	
+	<target name="checkWindows" if="isWindows">
+		<echo message="build in windows"></echo>
+	</target>
+
+	<target name="checkMac" if="isMac">
+		<echo message="build in Mac"></echo>
+	</target>
+	
+	<target name="check_sys">
+		<antcall target="checkWindows" />
+		<antcall target="checkMac" />
+	</target>
+		
 </project>
